@@ -15,6 +15,9 @@ function generateNumbers(evenCount, oddCount) {
         if (even % 2 !== 0) even--;
       }
 
+      // Pad the even number with a leading zero until the total string length is equal to 2
+      even = even.toString().padStart(2, "0");
+
       numbers.push(even);
     }
 
@@ -28,6 +31,9 @@ function generateNumbers(evenCount, oddCount) {
         odd = Math.floor(Math.random() * 49) + 1;
         if (odd % 2 === 0) odd++;
       }
+
+      // Pad the odd number with a leading zero until the total string length is equal to 2
+      odd = odd.toString().padStart(2, "0");
 
       numbers.push(odd);
     }

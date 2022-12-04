@@ -17,6 +17,9 @@ function generateNumbers($evenCount, $oddCount) {
         if ($even % 2 != 0) $even--;
       }
 
+      // Pad the even number with a leading zero until the total string length is equal to 2
+      $even = str_pad($even, 2, "0", STR_PAD_LEFT);
+
       $numbers[] = $even;
     }
 
@@ -30,6 +33,9 @@ function generateNumbers($evenCount, $oddCount) {
         $odd = mt_rand(1, 49);
         if ($odd % 2 == 0) $odd++;
       }
+
+      // Pad the odd number with a leading zero until the total string length is equal to 2
+      $odd = str_pad($odd, 2, "0", STR_PAD_LEFT);
 
       $numbers[] = $odd;
     }
