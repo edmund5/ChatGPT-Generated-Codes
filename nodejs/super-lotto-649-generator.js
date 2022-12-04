@@ -8,6 +8,13 @@ function generateNumbers(evenCount, oddCount) {
     for (let j = 0; j < evenCount; j++) {
       let even = Math.floor(Math.random() * 48) + 2;
       if (even % 2 !== 0) even--;
+
+      // Check for duplicates
+      while (numbers.includes(even)) {
+        even = Math.floor(Math.random() * 48) + 2;
+        if (even % 2 !== 0) even--;
+      }
+
       numbers.push(even);
     }
 
@@ -15,6 +22,13 @@ function generateNumbers(evenCount, oddCount) {
     for (let j = 0; j < oddCount; j++) {
       let odd = Math.floor(Math.random() * 49) + 1;
       if (odd % 2 === 0) odd++;
+
+      // Check for duplicates
+      while (numbers.includes(odd)) {
+        odd = Math.floor(Math.random() * 49) + 1;
+        if (odd % 2 === 0) odd++;
+      }
+
       numbers.push(odd);
     }
 

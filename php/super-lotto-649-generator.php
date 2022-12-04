@@ -10,6 +10,13 @@ function generateNumbers($evenCount, $oddCount) {
     for ($j = 0; $j < $evenCount; $j++) {
       $even = mt_rand(2, 48);
       if ($even % 2 != 0) $even--;
+
+      // Check for duplicates
+      while (in_array($even, $numbers)) {
+        $even = mt_rand(2, 48);
+        if ($even % 2 != 0) $even--;
+      }
+
       $numbers[] = $even;
     }
 
@@ -17,6 +24,13 @@ function generateNumbers($evenCount, $oddCount) {
     for ($j = 0; $j < $oddCount; $j++) {
       $odd = mt_rand(1, 49);
       if ($odd % 2 == 0) $odd++;
+
+      // Check for duplicates
+      while (in_array($odd, $numbers)) {
+        $odd = mt_rand(1, 49);
+        if ($odd % 2 == 0) $odd++;
+      }
+
       $numbers[] = $odd;
     }
 
